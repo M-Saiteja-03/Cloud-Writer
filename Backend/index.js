@@ -4,7 +4,7 @@ ConnectToMongo();
 
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 5000;
 
 app.use(express.json());// middleware used for the usage of req.body to get the data from web pages
 // app.get('/', (req, res) => {
