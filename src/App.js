@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';// Update import to match the new filen
 function App() {
   return (
     <>
-      <Navbar />
+    <Navbar/>
       <h1>Hi I'm Saiteja</h1>
     </>
   );
