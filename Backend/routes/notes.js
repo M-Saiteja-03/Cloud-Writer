@@ -4,7 +4,7 @@ const Notes = require('../models/Notes')
 var fetchuser=require('../middleware/fetchuser');
 const { body, validationResult } = require('express-validator');
 
-//ROUTE:1 endpoint to get all the notes of a user- login required
+//ROUTE:1 endpoint to read all the notes of a user- login required
 
 router.get('/getallnotes',fetchuser, async (req,res)=>{
     try {
@@ -16,7 +16,7 @@ router.get('/getallnotes',fetchuser, async (req,res)=>{
     }
 })
 
-//ROUTE:2 endpoint to add notes of a user- login required
+//ROUTE:2 endpoint to create notes of a user- login required
 
 router.post('/addnotes',fetchuser,[
     body('title','enter a valid title').isLength({min:3}),
