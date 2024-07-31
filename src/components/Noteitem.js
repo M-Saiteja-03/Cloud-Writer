@@ -4,24 +4,24 @@ const Noteitem = (props) => {
     const {note} = props;
     return (
         <div >
-            <div class="card text-center card border-primary mb-3">
-                <div class="card-header">
-                    <ul class="nav nav-pills card-header-pills">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Active</a>
+            <div className="card text-center card border-primary mb-3">
+                <div className="card-header">
+                    <ul className="nav nav-pills card-header-pills">
+                        <li className="nav-item">
+                            <a className="nav-link active" href="#"><i class="fa-solid fa-pen-to-square"></i> Edit Note</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Link</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        <li className="nav-item">
+                            <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">{note.title}</h5>
-                    <p class="card-text">{note.description}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div className="card-body">
+                    <h5 className="card-title">{note.title}</h5>
+                    <p className="card-text">{note.description}</p>
+                    <a href="#" className="btn btn-primary"><i class="fa-solid fa-trash"></i> Delete Note</a>
                 </div>
             </div>
         </div>
