@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { useNoteState } from '../context/notes/noteState';
 import Noteitem from './Noteitem';
 import Addnote from './Addnote';
 
 const Notes = () => {
     const note = useNoteState();
-    const { notes } = note;
+
+    const { notes, getAllNotes } = note;
+    useEffect(()=>{
+        getAllNotes();
+    },[]);
 
     return (
         <>
