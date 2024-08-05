@@ -15,8 +15,8 @@ const Notes = () => {
         <>
             <Addnote />
             <div>
-                <h1>My Notes</h1>
-                {Array.isArray(notes) ? notes.map((ele) => (
+                <h1>My Notes:</h1>
+                {Array.isArray(notes) && notes.length>0 ? notes.map((ele) => (
                     <Noteitem key={ele._id} note={ele} />
                 )) : <p>No notes available</p>}
             </div>
