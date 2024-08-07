@@ -15,10 +15,12 @@ const Noteitem = (props) => {
 
     const handleDelete=()=>{
         deleteNote(note._id);
+        props.showAlert("Deleted Successfully","success")
     }
 
     const handleEdit = () => {
         editNote(note._id, editedNoteDetails.etitle, editedNoteDetails.edescription, editedNoteDetails.etag);
+        props.showAlert("Edited Note Successfully","success")
     }
 
     const toggleExpand = () => {

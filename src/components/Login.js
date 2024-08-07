@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = (props) => {
     const [credentials, setCredentials] = useState({ email: "", password: "" });
     const navigate = useNavigate();
-    const {email, password} = credentials;
+    // const {email, password} = credentials;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -14,7 +14,7 @@ const Login = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({email, password})
+                body: JSON.stringify({ email: credentials.email, password: credentials.password })
             });
 
             if (!response.ok) {
@@ -25,8 +25,9 @@ const Login = () => {
             if (json.success) {
                 localStorage.setItem('token', json.authtoken);
                 navigate('/'); // Redirect to home page
+                props.showAlert("Logged in Successfully","success")
             } else {
-                alert("Invalid credentials");
+                props.showAlert("Invalid Credentials","danger")
             }
         } catch (error) {
             console.error("There was an error!", error);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Signup = () => {
+const Signup = (props) => {
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "" });
     const navigate = useNavigate();
 
@@ -19,8 +19,9 @@ const Signup = () => {
         if (json.success) {
             localStorage.setItem('token', json.authtoken);
             navigate('/'); // Redirect to home page
+            props.showAlert("Welcome to Cloud-Writer","success")
         } else {
-            alert("User already exists or some error occurred");
+            props.showAlert("User already exists or enter all details","danger");
         }
     }
 

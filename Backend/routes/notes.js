@@ -19,8 +19,8 @@ router.get('/getallnotes',fetchuser, async (req,res)=>{
 //ROUTE:2 endpoint to create notes of a user- login required
 
 router.post('/addnotes',fetchuser,[
-    body('title','enter a valid title').isLength({min:3}),
-    body('description','must be atleast 5 char').isLength({min:5})
+    body('title','enter a valid title').isLength({min:1}),
+    body('description','must be atleast 5 char').isLength({min:3})
 ], async (req,res)=>{
     try {
         const errors=validationResult(req);
