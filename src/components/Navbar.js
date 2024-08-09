@@ -1,12 +1,13 @@
 import React from "react";
-import { Link,  useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
+import Profilebutton from "./Profilebutton";
 
 
 const Navbar = () => {
   const location = useLocation();
 
   const navigate = useNavigate();
-
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -51,32 +52,37 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>{isAuthenticated && (
-                      <form className="d-flex" role="search">
-                      <input
-                        className="form-control me-2"
-                        type="search"
-                        placeholder="Search"
-                        aria-label="Search"
-                      />
-                      <button className="btn btn-outline-light mx-1" type="submit">
-                        Search
-                      </button>
-                    </form>
+            <form className="d-flex" role="search">
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button className="btn btn-outline-light mx-1" type="submit">
+                Search
+              </button>
+            </form>
           )}
           {!localStorage.getItem('token') ? (
-              <>
-                <Link className="btn btn-outline-light mx-1" to="/login">
-                  Login
-                </Link>
-                <Link className="btn btn-outline-light mx-1" to="/signup">
-                  Signup
-                </Link>
-              </>
-            ) : (
+            <>
+              <Link className="btn btn-outline-light mx-1" to="/login">
+                Login
+              </Link>
+              <Link className="btn btn-outline-light mx-1" to="/signup">
+                Signup
+              </Link>
+            </>
+          ) : (
+            <>
               <button className="btn btn-outline-light mx-1" onClick={handleLogout}>
                 Logout
               </button>
-            )}
+              <Profilebutton />
+            </>
+
+          )}
+
         </div>
       </div>
     </nav>

@@ -1,0 +1,46 @@
+/* Apply styles only to the Profile page by using a parent class or ID specific to the Profile page */
+.profile-page {
+    background: grey;
+    padding: 20px;
+}
+
+.profile-page .form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8;
+}
+
+.profile-page .profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none;
+}
+
+.profile-page .profile-button:hover {
+    background: #682773;
+}
+
+.profile-page .profile-button:focus {
+    background: #682773;
+    box-shadow: none;
+}
+
+.profile-page .profile-button:active {
+    background: #682773;
+    box-shadow: none;
+}
+
+.profile-page .back:hover {
+    color: #682773;
+    cursor: pointer;
+}
+
+.profile-page .labels {
+    font-size: 11px;
+}
+
+.profile-page .add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8;
+}

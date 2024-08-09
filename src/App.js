@@ -7,6 +7,8 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Alert from './components/Alert';
 import { useState } from 'react';
+import Profilepage from './components/Profilepage';
+
 
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
           <Route exact path="/" element={isAuthenticated()? <Home showAlert={showAlert}/>: <Navigate to="/login"/> } />
           <Route exact path="/signup" element={<Signup showAlert={showAlert}/>} />
           <Route exact path="/login" element={<Login showAlert={showAlert}/>} />
+          <Route exact path="/profile" element={<Profilepage/>} />
           <Route exact path="/about" element={isAuthenticated() ? <About /> : <Navigate to="/login" />} />
         </Routes>
         </div>
